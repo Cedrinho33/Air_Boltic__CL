@@ -1,13 +1,13 @@
-WITH orders as (
+WITH orders AS (
 
-    select
-        id as order_id,
-        user_id as customer_id,
+    SELECT
+        id AS order_id,
+        user_id AS customer_id,
         order_date,
         status
 
-    from dbt-tutorial-raw-data.jaffle_shop.raw_orders
+    FROM dbt-tutorial-raw-data.jaffle_shop.raw_orders
 
-),
+)
 
 SELECT * FROM orders

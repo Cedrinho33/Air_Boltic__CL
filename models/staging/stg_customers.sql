@@ -1,12 +1,12 @@
-WITH customers as (
+WITH customers AS (
 
     SELECT
-        id as customer_id,
+        id AS customer_id,
         first_name,
         last_name
 
-    from dbt-tutorial-raw-data.jaffle_shop.raw_customers
+    FROM dbt-tutorial-raw-data.jaffle_shop.raw_customers
 
-),
+)
 
-SELECT * from customers
+SELECT * FROM customers
