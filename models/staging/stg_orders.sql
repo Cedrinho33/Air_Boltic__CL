@@ -1,4 +1,4 @@
-orders as (
+WITH orders as (
 
     select
         id as order_id,
