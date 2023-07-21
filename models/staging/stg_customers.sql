@@ -5,7 +5,7 @@ WITH customers AS (
         first_name,
         last_name
 
-    FROM dbt-tutorial-raw-data.jaffle_shop.raw_customers
+    FROM {{ source('jaffle_shop', 'customers') }}
 
 )
 

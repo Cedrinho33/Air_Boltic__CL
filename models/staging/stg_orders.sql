@@ -6,7 +6,7 @@ WITH orders AS (
         order_date,
         status
 
-    FROM dbt-tutorial-raw-data.jaffle_shop.raw_orders
+    FROM {{ source('jaffle_shop', 'orders') }}
 
 )
 
