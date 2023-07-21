@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: dbt-tutorial-raw-data
+    schema: jaffle_shop
+    tables:
+      - name: raw_customers
+      - name: raw_orders
