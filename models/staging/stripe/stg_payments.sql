@@ -9,7 +9,7 @@ WITH payments AS (
         -- amount is stored in cents, convert it to dollars
         amount / 100 AS amount,
 
-    FROM {{ SOURCE('stripe', 'raw_payments') }}
+    FROM {{ source('stripe', 'raw_payments') }}
 
 )
 
