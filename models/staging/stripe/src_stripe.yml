@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: dbt-tutorial-raw-data
+    schema: stripe
+    tables:
+      - name: raw_payments
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
