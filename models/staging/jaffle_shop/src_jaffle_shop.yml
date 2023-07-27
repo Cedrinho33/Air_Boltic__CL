@@ -2,16 +2,19 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: A clone of a Postgres application database.
     database: dbt-tutorial-raw-data
     schema: jaffle_shop
     tables:
       - name: raw_customers
+        description: Raw customers data.
         columns:
           - name: id
             tests:
               - unique
               - not_null
       - name: raw_orders
+        description: Raw orders data.
         columns:
           - name: id
             tests:
