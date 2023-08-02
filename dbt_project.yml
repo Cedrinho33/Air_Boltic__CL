@@ -35,3 +35,5 @@ models:
   test_project:
     marts:
       +materialized: table
+    support:
+      +materialized: table
