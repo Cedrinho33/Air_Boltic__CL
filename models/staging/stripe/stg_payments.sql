@@ -7,7 +7,7 @@ WITH payments AS (
         "accepted" AS status,
 
         -- amount is stored in cents, convert it to dollars
-        {{cents_to_dollars('amount',4)}} AS amount,
+        {{cents_to_dollars('amount')}} AS amount,
 
     FROM {{ source('stripe', 'raw_payments') }}
 
