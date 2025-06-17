@@ -1,5 +1,3 @@
-Welcome to your new dbt project!
-
 ### Task 1
 
 Please see models > 3_marts > mart_trip.sql for the data model that I have developed.
@@ -22,7 +20,7 @@ If I had more time, I would:
 - Make sure data is flowing efficiently between dbt layers, by for example leveraging incremental loads for the trip table
 - Ensure slowly changing dimensions are treated appropriately (e.g. trip.status)
 - Obtain more data:
-    - data on airport's continents to separate inter-continental flights
+    - data on airport's continents to separate intercontinental flights
     - info on competing flight routes on the same day
     - pricing of Air Boltic (maybe there is demand but the pricing is just not competitive? We only see who has booked but not who tried and didn't.)
 
@@ -40,7 +38,7 @@ In an ideal world with unlimited resources and tooling, I would set up a robust 
 - Document all data models and metrics.
 - Set up monitoring and alerts for model failures, freshness issues and schema drift.
 
-In the real world, I would prioritize the abovelisted list.
+In the real world, I would prioritize the above list.
 
 It usually makes sense to start small and add more complexity down the road as the business evolves:
 1. Git-based workflow with dbt Cloud and dbt's built-in testing framework.
