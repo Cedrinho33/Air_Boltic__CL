@@ -7,8 +7,8 @@ WITH trip AS (
 orders AS(
     SELECT
         trip_id,
-        SUM(price_eur) AS revenue,
-        COUNT(DISTINCT seat_number) AS seats_booked
+        SUM(price_eur) AS revenue, -- Definitions better in semantic layer
+        COUNT(DISTINCT seat_number) AS booked_seats -- Definitions better in semantic layer
     FROM {{ ref("src_order") }}
     WHERE status != "Cancelled"
     GROUP BY 1
@@ -40,9 +40,12 @@ SELECT
     t.destination_city_population,
 
     t.distance_km,
-
     t.max_distance,
+
     t.max_seats,
+    o.booked_seats,
+    
+    o.revenue,
 
     -- Date & Time 
     t.start_timestamp,
