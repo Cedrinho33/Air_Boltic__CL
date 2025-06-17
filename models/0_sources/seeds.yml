@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: seeds
+    description: Extra data sources used as seeds to enrich main data source.
+    database: dbt-tutorial-raw-data
+    schema: seeds
+    tables:
+      - name: cities
+        description: Extra city data sourced from kaggle (https://www.kaggle.com/datasets/juanmah/world-cities?resource=download).
+      - name: aeroplane_models_v2
+        description: Extra areroplane model data sourced from object storage using BigQuery external tables.
