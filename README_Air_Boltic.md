@@ -35,7 +35,7 @@ In an ideal world with unlimited resources and tooling, I would set up a robust 
     - 1. Open/Update PR to merge into staging: Validate code, tests and logic
     - 2. Merge PR into staging: Run CD to deploy changes to staging
     - 3. Open/Update PR to merge into production: Staging QA
-    - 3. Merge PR into production: RD CD to deploy changes to production
+    - 3. Merge PR into production: Run CD to deploy changes to production
 - Add key data tests (e.g. no negative flight duration allowed).
 - Document all data models and metrics.
 - Set up monitoring and alerts for model failures, freshness issues and schema drift.
@@ -53,6 +53,6 @@ It usually makes sense to start small and add more complexity down the road as t
 
 At my last company, we started with just Fivetran, dbt Cloud and GitHub. 
 I set up a simple CI pipeline that ran dbt run and dbt test on every PR. 
-As we scaled, we added staging datasets and built a testing framework for key metrics. 
+As we scaled, I added staging datasets and built a testing framework for key metrics. 
 Right now I am building monitoring with dbt artifacts that requires data producing teams 
 to fix detected data quality issues in different source systems as they occur.
