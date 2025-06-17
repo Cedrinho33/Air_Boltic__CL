@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: air_boltic
+    description: A clone of a Google Sheet database.
+    database: dbt-tutorial-raw-data
+    schema: air_boltic
+    tables:
+      - name: customer
+        description: Raw customer data.
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+          - name: name
+            tests:
+              - not_null
+          - name: customer_group_id
+          - name: email
+            tests:
+              - unique
+          - name: phone_number
+      - name: customer_group
+        description: Raw customer group data.
+        columns:
+          - name: customer_group_id
+            tests:
+              - unique              
+              - not_null
+          - name: name
+          - name: type
+          - name: registry_number
+      - name: aeroplane
+        description: Raw aeroplane data.
+        columns:
+          - name: aeroplane_id
+            tests:
+              - unique              
+              - not_null
+          - name: model
+          - name: manufacturer
+      - name: trip
+        description: Raw trip data.
+        columns:
+          - name: trip_id
+            tests:
+              - unique              
+              - not_null
+          - name: origin_city
+          - name: destination_city
+          - name: aeroplane_id
+          - name: start_timestamp
+          - name: end_timestamp
+      - name: orders
+        description: Raw order data.
+        columns:
+          - name: order_id
+            tests:
+              - unique              
+              - not_null
+          - name: customer_id
+          - name: trip_id
+          - name: price_eur
+          - name: seat_number
+          - name: status
